@@ -1,0 +1,10 @@
+project: savantenvs/mintty
+target: fuzz_term
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_term/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_term
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_term/fuzz_term.dict
+    timeout: 10

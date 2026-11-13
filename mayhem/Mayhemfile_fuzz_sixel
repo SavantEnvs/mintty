@@ -1,0 +1,10 @@
+project: savantenvs/mintty
+target: fuzz_sixel
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_sixel/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_sixel
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_sixel/fuzz_sixel.dict
+    timeout: 10
